@@ -1,4 +1,4 @@
-package com.springBajo8.springBajo8.controller;
+package com.springBajo8.springBajo8.model;
 
 public class TratamientoYPadecimiento {
     private  String tratamiento;

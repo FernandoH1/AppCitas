@@ -1,14 +1,14 @@
-package com.springBajo8.springBajo8.domain;
+package com.springBajo8.springBajo8.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Document(collection = "citas")
-public class citasDTOReactiva {
+public class CitasReactiva {
 
     @Id
     private String id = UUID.randomUUID().toString().substring(0, 10);
@@ -28,6 +28,8 @@ public class citasDTOReactiva {
     private String horaReservaCita;
 
     private String estadoReservaCita;
+
+    private List<TratamientoYPadecimiento> tratamientosYpadecimientos;
 
     public String getId() {
         return id;
@@ -101,7 +103,11 @@ public class citasDTOReactiva {
         this.estadoReservaCita = estadoReservaCita;
     }
 
-    //private Date sendedDate = new Date();
+    public List<TratamientoYPadecimiento> getTratamientosYpadecimientos() {
+        return tratamientosYpadecimientos;
+    }
 
-
+    public void setTratamientosYpadecimientos(List<TratamientoYPadecimiento> tratamientosYpadecimientos) {
+        this.tratamientosYpadecimientos = tratamientosYpadecimientos;
+    }
 }
