@@ -11,6 +11,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:8080")
 public class citasReactivaResource {
 
     @Autowired
@@ -47,5 +48,12 @@ public class citasReactivaResource {
     private Flux<citasDTOReactiva> findAll() {
         return this.icitasReactivaService.findAll();
     }
+
+    @GetMapping(value = "/c/{id}")
+    private Mono<citasDTOReactiva> findByID(@PathVariable("id") String id) {
+        return this.icitasReactivaService.findById(id);
+    }
+
+
 
 }
