@@ -31,6 +31,34 @@ public class CitasReactiva {
 
     private List<TratamientoYPadecimiento> tratamientosYpadecimientos;
 
+    public CitasReactiva() {
+    }
+
+    public CitasReactiva(String id, String idPaciente, String nombrePaciente, String apellidosPaciente, String nombreMedico, String apellidosMedico, LocalDate fechaReservaCita, String horaReservaCita, String estadoReservaCita) {
+        this.id = id;
+        this.idPaciente = idPaciente;
+        this.nombrePaciente = nombrePaciente;
+        this.apellidosPaciente = apellidosPaciente;
+        this.nombreMedico = nombreMedico;
+        this.apellidosMedico = apellidosMedico;
+        this.fechaReservaCita = fechaReservaCita;
+        this.horaReservaCita = horaReservaCita;
+        this.estadoReservaCita = estadoReservaCita;
+    }
+
+    public CitasReactiva(String id, String idPaciente, String nombrePaciente, String apellidosPaciente, String nombreMedico, String apellidosMedico, LocalDate fechaReservaCita, String horaReservaCita, String estadoReservaCita, List<TratamientoYPadecimiento> tratamientosYpadecimientos) {
+        this.id = id;
+        this.idPaciente = idPaciente;
+        this.nombrePaciente = nombrePaciente;
+        this.apellidosPaciente = apellidosPaciente;
+        this.nombreMedico = nombreMedico;
+        this.apellidosMedico = apellidosMedico;
+        this.fechaReservaCita = fechaReservaCita;
+        this.horaReservaCita = horaReservaCita;
+        this.estadoReservaCita = estadoReservaCita;
+        this.tratamientosYpadecimientos = tratamientosYpadecimientos;
+    }
+
     public String getId() {
         return id;
     }

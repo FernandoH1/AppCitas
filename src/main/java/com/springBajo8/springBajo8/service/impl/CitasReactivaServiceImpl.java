@@ -46,7 +46,6 @@ public class CitasReactivaServiceImpl implements IcitasReactivaService {
         return this.IcitasReactivaRepository.findByIdPaciente(idPaciente);
     }
 
-
     @Override
     public Flux<CitasReactiva> findAll() {
         return this.IcitasReactivaRepository.findAll();
@@ -75,8 +74,8 @@ public class CitasReactivaServiceImpl implements IcitasReactivaService {
     }
 
     @Override
-    public Flux<CitasReactiva> consultarMedicoQueLoAtendera(String id) {
-        return this.IcitasReactivaRepository.findByIdPaciente(id)
+    public Flux<CitasReactiva> consultarMedicoQueLoAtendera(String idPaciente) {
+        return this.IcitasReactivaRepository.findByIdPaciente(idPaciente)
                 .flatMap(citasReactiva1 -> {
                             CitasReactiva newCita = new CitasReactiva();
                             newCita.setNombreMedico(citasReactiva1.getNombreMedico());
